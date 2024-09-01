@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const { Provider } = require("react-redux");
 
 const app = express();
 app.use(express.json());
@@ -32,15 +33,19 @@ const getClientIp = (req) => {
   );
 };
 
-app.get("/", async (req, res) => {
-  const userId = req.query.userId;
-  const ip = getClientIp(req);
-  console.log(typeof userId);
-
-  await model.create({ userId: userId.toString(), ip });
-  console.log(`User ID: ${userId}, IP: ${ip}`);
-
-  res.send("Success!");
+app.get("/", (req, res) => {
+  res.send("Hiii");
 });
 
-app.listen(5001, () => console.log("Server listening on port 3000"));
+// app.get("/", async (req, res) => {
+//   const userId = req.query.userId;
+//   const ip = getClientIp(req);
+//   console.log(typeof userId);
+
+//   await model.create({ userId: userId.toString(), ip });
+//   console.log(`User ID: ${userId}, IP: ${ip}`);
+
+//   res.send("Success!");
+// });
+
+app.listen(5001, () => console.log(`Server listening on port ${5001}`));
