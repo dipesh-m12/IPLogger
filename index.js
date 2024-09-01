@@ -34,7 +34,7 @@ const getClientIp = (req) => {
 };
 
 app.get("/", (req, res) => {
-  res.send("Hiii");
+  res.send("hii");
 });
 
 // app.get("/", async (req, res) => {
@@ -48,4 +48,4 @@ app.get("/", (req, res) => {
 //   res.send("Success!");
 // });
 
-app.listen(5001, () => console.log(`Server listening on port ${5001}`));
+app.listen(3000, () => console.log("Server ready on port 3000."));
